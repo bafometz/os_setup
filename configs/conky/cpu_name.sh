@@ -1,0 +1,1 @@
+cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //' | sed -e 's/Processor//'  | sed -e 's/(tm)/™/' | sed -e 's/(R)//' | sed -e 's/CPU//' | sed -e 's/@/:/' | sed -e 's/\ \ //' | sed -e 's/[0-9].[0-9][0-9]GHz//' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | uniq

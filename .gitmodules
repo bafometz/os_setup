@@ -1,0 +1,12 @@
+[submodule "themes/zuki-themes"]
+	path = themes/zuki-themes
+	url = https://github.com/bafometz/zuki-themes.git
+[submodule "themes/Nordic"]
+	path = themes/Nordic
+	url = https://github.com/bafometz/Nordic.git
+[submodule "themes/Greybird"]
+	path = themes/Greybird
+	url = https://github.com/bafometz/Greybird.git
+[submodule "themes/arc-icon-theme"]
+	path = themes/arc-icon-theme
+	url = https://github.com/bafometz/arc-icon-theme.git

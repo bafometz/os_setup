@@ -1,0 +1,208 @@
+-- Conky, a system monitor https://github.com/brndnmtthws/conky
+--
+-- This configuration file is Lua code. You can write code in here, and it will
+-- execute when Conky loads. You can use it to generate your own advanced
+-- configurations.
+--
+-- Try this (remove the `--`):
+--
+--   print("Loading Conky config")
+-- For more on Lua, see:
+-- https://www.lua.org/pil/contents.html
+
+conky.config = {
+    --No Category
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    stippled_borders = 0,
+
+    --Colours
+        default_color = '#ffffff',                 
+
+        --https://www.color-hex.com/color-palette/1223
+        color1 = '#ffd4e5',
+        color2 = '#d4ffea',
+        color3 = '#eecbff',
+        color4 = '#feffa3',
+        color5 = '#dbdcff',
+        --color1='#fdeebe',
+        --color2='#c6a27d',
+        --color3='#fe83ce',
+        --color4='#f5bef4',
+        --color5='#dbf7fd',
+
+        --https://www.color-hex.com/color-palette/1039022
+        --color1='#cfe2f3',
+        --color2='#a3b899',
+        --color3='#dde6d5',
+        --color4='#98ff98',
+        --color5='#ffbcd9',
+
+        --https://www.color-hex.com/color-palette/8932
+        --color1='#89cff0',
+        --color2='#bcffe2',
+        --color3='#b19cd9',
+        --color4='#98ff98',
+        --color5='#ffbcd9',
+        
+        --https://www.color-hex.com/color/89cff0
+        --color1 = '#89cff0',
+        --color2 = '#cfebf9',
+        --color3 = '#dbf0fa',
+        --color4 = '#e7f5fc',
+        --color5 = '#6da5c0',
+        --Shades
+        --color2 = '#7bbad8',
+        --color3 = '#6da5c0',
+        --color4 = '#5f90a8',
+        --color5 = '#527c90',
+        --color6 = '#446778',
+        --color7 = '#365260',
+        --color8 = '#293e48',
+        --color9= '#1b2930',
+        --color10 = '#0d1418',
+        --color11 = '#000000',
+        --Tints
+        --color12 = '#94d3f1',
+        --color13 = '#a0d8f3',
+        --color14 = '#acddf4',
+        --color15 = '#b8e2f6',
+        --color16 = '#c4e7f7',
+        --color17 = '#cfebf9',
+        --color18 = '#dbf0fa',
+        --color19 = '#e7f5fc',
+        --color20 = '#f3fafd',
+        --color21 = '#ffffff',
+                        
+        default_color = 'white',
+        default_outline_color = 'white',
+        default_shade_color = 'white',
+
+    --Signal Colours
+        color7 = '#C0FF00',                         --green
+        color8 = '#FFA726',                         --orange
+        color9 = '#F1544B',                         --firebrick
+
+    --System
+        xinerama_head = 1,
+        double_buffer = true,
+        no_buffers = true,
+        out_to_console = false,
+        out_to_ncurses = false,
+        out_to_stderr = false,
+        out_to_x = true,
+        use_xft = true,
+        --own_window_type = 'dock',
+        own_window = true,
+        own_window_class = 'Conky',
+        own_window_type = 'normal',
+        own_window_hints = 'undecorated,below,skip_taskbar,sticky,skip_pager',
+        own_window_transparent = true ,
+        own_window_argb_visual = true,
+        own_window_argb_value = 50,
+        
+        update_interval = 1.0,
+            --Placement
+                alignment = 'top_right',
+                gap_x = 10,
+                gap_y = 10,
+                minimum_height = 5,
+--               minimum_width = 400,
+--                maximum_width = 600, -- maximum width of window
+                minimum_width = 400,
+                maximum_width = 1920, -- maximum width of window
+                maximum_height = 1080, -- maximum width of window
+
+    --Graphic settings
+
+        border_width = 1,
+        background = false,
+        
+        draw_outline = false,
+        draw_shades = false,
+        use_spacer = 'none',
+
+        --Font Settings
+            font = 'GoMono Nerd Font Mono=16',
+            extra_newline = false,
+            draw_borders = false,
+            uppercase = false,
+
+        --Graphs
+            show_graph_range = false,
+            show_graph_scale = false,
+            draw_graph_borders = true,
+            border_inner_margin = 10,                   -- margin between border and text
+            border_outer_margin = 10,                   -- margin between border and edge of window
+            border_width = 0,                           -- border width in pixels
+            default_bar_width = 0,                      -- default is 0 - full width
+            default_bar_height = 25,                    -- default is 6
+            default_gauge_height = 25,                  -- default is 25
+            default_gauge_width = 0,                    -- default is 40
+            default_graph_height = 50,                  -- default is 25
+            default_graph_width = 0,                    -- default is 0 - full width
+            default_shade_color = '#5f90a8',            -- default shading colour
+            default_outline_color = '#000000',          -- default outline colour
+            draw_borders = false,                       -- draw borders around text
+            draw_graph_borders = true,                  -- draw borders around graphs
+            draw_shades = false,                        -- draw shades
+            draw_outline = false,                       -- draw outline
+            stippled_borders = 0,                       -- dashing the border
+
+}
+
+
+-- ${color grey} ${font GoMono Nerd Font Mono:bold:size=25} ${time %d/%m/%y}${font} <- date
+
+conky.text = [[
+#Time
+${color2} ${font GoMono Nerd Font Mono:bold:size=50} ${time %H:%M:%S} ${font} 
+${color2} ${font Go Nerd Font Mono:size=25}${alignc}${time %A} ${time %e} ${time %B} , ${time %Y}${font} 
+
+
+${color1}${font Go Nerd Font Mono:style=Bold:size=17}I N F O   ${hr 2}${font}
+${color2}${font GoMono Nerd Font Mono:normal}Uptime: ${alignr}${color3}${uptime}
+${color2}${font GoMono Nerd Font Mono:normal}Current Name: ${alignr}${color3}${desktop_name}(${desktop}/${desktop_number})
+
+${color1}${font Go Nerd Font Mono:style=Bold:size=17}C P U   ${hr 2}${font}
+#CPU name
+#${alignr}${color}${font GoMono Nerd Font Mono:normal:size=9}${execi 65000 /home/bjorn/.conky/cpu_name.sh}${color} @ ${color}${freq_g 1}GHz ${font}
+#${font GoMono Nerd Font Mono:size=12} UP:${uptime_short} ${alignr}CPU ${hwmon 2 temp 1}°C ${font}
+#${cpubar cpu0}
+${color2}CPU Name: ${font GoMono Nerd Font Mono:normal}${color3}${alignr}${execi 65000 /home/bjorn/.conky/cpu_name.sh}
+${color2}CPU Frequency:${color3}${alignr}${freq_g 1}GHz
+${color2}CPU Temperature:${color3}${alignr} ${hwmon 2 temp 1}°C
+${color2}CPU Usage:${color3}${alignr}${cpu}% 
+${cpugraph cpu0}
+${color5}Top Processes(${running_processes}) ${alignr}${color5}${offset -40}PID ${alignr}${offset -20}CPU% ${alignr}Mem% 
+${color2}${top name 1} ${alignr}${color3}${offset -75}${top pid 1}${alignr}${offset -45}${top cpu 1}${alignr}${top mem 1}
+${color2}${top name 2} ${alignr}${color3}${offset -75}${top pid 2}${alignr}${offset -45}${top cpu 2}${alignr}${top mem 2}
+${color2}${top name 3} ${alignr}${color3}${offset -75}${top pid 3}${alignr}${offset -45}${top cpu 3}${alignr}${top mem 3}
+
+${color1}${font Go Nerd Font Mono:style=Bold:size=17}M E M O R Y   ${hr 2}${font}
+${color2}Swap Usage:${color3}${alignr}${swap}/${swapmax}
+${color2}Memory Usage:${color3}${alignr}${mem}/${memmax}
+${memgraph}
+${color5}Top Processes ${alignr}${offset -40}PID ${alignr}${offset -20}CPU% ${alignr}Mem% 
+${color2}${top_mem name 1} ${alignr}${offset -75}${top_mem pid 1}${alignr}${offset -45}${top_mem cpu 1}${alignr}${top_mem mem 1}
+${color2}${top_mem name 2} ${alignr}${offset -75}${top_mem pid 2}${alignr}${offset -45}${top_mem cpu 2}${alignr}${top_mem mem 2}
+${color2}${top_mem name 3} ${alignr}${offset -75}${top_mem pid 3}${alignr}${offset -45}${top_mem cpu 3}${alignr}${top_mem mem 3}
+
+${color1}${font Go Nerd Font Mono:style=Bold:size=17}N E T W O R K   ${hr 2}${font}
+#${color2}Default Gateway:${color}${alignr}${gw_ip}
+#${color2}Internal IP Address:${color}${alignr}${addrs eno1}
+#${color2}External IP Address:${color}${alignr}${texeci 3600 wget -q -O- https://ipecho.net/plain}
+${color2}Upload / Download Total:${color}${alignr}${totalup eno1} / ${totaldown eno1}
+${color2}Upload / Download Speed:${color}${alignr}${upspeed eno1} / ${downspeed eno1}
+${upspeedgraph enp6s0}
+${downspeedgraph enp6s0}
+
+${color1}${font Go Nerd Font Mono:style=Bold:size=17}E N T R O P Y   ${hr 2}${font}
+${entropy_avail} / ${entropy_poolsize} (${entropy_perc }%)
+${entropy_bar}
+
+#${color1}RSS feed ${hr 2} $color
+#${font GoMono Nerd Font Mono:normal:size=9} ${execi 65000 /home/bjorn/.conky/rss.sh} ${font}
+#${color2} ${scroll 50 15 ${font GoMono Nerd Font Mono:normal:size=12} ${rss https://www.opennet.ru/opennews/opennews_all_utf.rss 300 item_titles 10 5} ${font} } 
+]]
+
